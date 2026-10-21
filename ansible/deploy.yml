@@ -57,13 +57,15 @@
           After=network.target
           [Service]
           User=aims
-          Group=aims
+          Group=www-data
           WorkingDirectory={{ aims_root }}
           Environment=AIMS_DATA=/var/lib/aims
           Environment=AIMS_SECURE=1
-          ExecStart={{ aims_root }}/.venv/bin/gunicorn --workers 1 --threads 4 --bind 127.0.0.1:{{ aims_port }} app:app
+          ExecStart={{ aims_root }}/.venv/bin/gunicorn --workers 1 --threads 4 --umask 007 --bind unix:/run/aims/aims.sock app:app
           Restart=on-failure
-          UMask=0077
+          UMask=0007
+          RuntimeDirectory=aims
+          RuntimeDirectoryMode=0750
           NoNewPrivileges=true
           PrivateTmp=true
           ProtectSystem=strict
@@ -82,12 +84,17 @@
             server_name {{ aims_domain }};
             client_max_body_size 10m;
             location / {
-              proxy_pass http://127.0.0.1:{{ aims_port }};
+              proxy_pass http://unix:/run/aims/aims.sock:;
               proxy_set_header Host $host;
               proxy_set_header X-Forwarded-Proto $scheme;
               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             }
           }
+    - name: Route existing AIMS virtual host through its dedicated socket
+      ansible.builtin.replace:
+        path: /etc/nginx/sites-available/aims
+        regexp: 'proxy_pass http://127\.0\.0\.1:[0-9]+;'
+        replace: 'proxy_pass http://unix:/run/aims/aims.sock:;'
     - name: Enable virtual host
       ansible.builtin.file:
         src: /etc/nginx/sites-available/aims
@@ -114,14 +121,32 @@
       when: aims_enable_tls | bool
       register: cert
       changed_when: "'Congratulations' in cert.stdout"
-    - name: Check application database readiness
-      ansible.builtin.uri:
-        url: 'http://127.0.0.1:{{ aims_port }}/api/health'
-        status_code: 200
-      register: readiness
-      retries: 10
-      delay: 2
-      until: readiness.status == 200
+    - name: Verify the dedicated AIMS database endpoint
+      block:
+        - name: Check application database readiness
+          ansible.builtin.uri:
+            url: 'http://localhost/api/health'
+            unix_socket: /run/aims/aims.sock
+            return_content: true
+            status_code: 200
+          register: readiness
+          retries: 10
+          delay: 2
+          until: readiness.status == 200 and readiness.json.name | default('') == 'AIMS' and readiness.json.status | default('') == 'ok'
+      rescue:
+        - name: Collect service diagnostics
+          ansible.builtin.command: systemctl status aims --no-pager --full
+          register: service_diagnostics
+          failed_when: false
+          changed_when: false
+        - name: Collect recent application logs
+          ansible.builtin.command: journalctl -u aims -n 60 --no-pager
+          register: application_logs
+          failed_when: false
+          changed_when: false
+        - name: Report readiness failure
+          ansible.builtin.fail:
+            msg: '{{ service_diagnostics.stdout }} {{ application_logs.stdout }}'
     - name: Show account bootstrap command
       ansible.builtin.debug:
         msg: 'Create admin: sudo -u aims env AIMS_DATA=/var/lib/aims {{ aims_root }}/.venv/bin/python {{ aims_root }}/scripts/admin.py create'

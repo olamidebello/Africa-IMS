@@ -29,6 +29,11 @@ CREATE TABLE IF NOT EXISTS resets(token TEXT PRIMARY KEY,user INTEGER,expires RE
 INSERT OR IGNORE INTO tenants(id,name) VALUES(1,'AIMS Community');
 ''')
 init()
+REGIONS=json.loads((ROOT/'static/regions.json').read_text())
+with db() as c:
+ columns={r['name'] for r in c.execute('PRAGMA table_info(users)')}
+ for col,default in [('language','pcm'),('currency','AFR')]:
+  if col not in columns:c.execute(f"ALTER TABLE users ADD COLUMN {col} TEXT NOT NULL DEFAULT '{default}'")
 SERVICES=[{'id':x,'name':n,'category':cat,'fields':fields} for x,n,cat,fields in [
 ('identity','Identity enrollment','Identity',['Full legal name','Previous names','Date of birth','Place of birth','Nationality','Residential address','Phone']),
 ('ssn','SS-5 preparation','Social protection',['Full legal name','Name at birth','Date of birth','Place of birth','Citizenship status','Parent names','Mailing address','Request type']),
@@ -106,7 +111,19 @@ def login():
 @auth()
 def me(u):
  with db() as c:t=c.execute('SELECT name FROM tenants WHERE id=?',(u['tenant'],)).fetchone()
- return jsonify(id=u['id'],name=u['name'],email=u['email'],role=u['role'],tenant=u['tenant'],tenant_name=t['name'],csrf=session['csrf'])
+ return jsonify(id=u['id'],name=u['name'],email=u['email'],role=u['role'],tenant=u['tenant'],tenant_name=t['name'],csrf=session['csrf'],language=u['language'],currency=u['currency'])
+@app.route('/api/preferences',methods=['GET','PATCH'])
+@auth()
+def preferences(u):
+ if request.method=='GET':return jsonify(language=u['language'],currency=u['currency'])
+ d=request.get_json() or {}
+ language=d.get('language',u['language']);currency=d.get('currency',u['currency'])
+ if language not in {r['code'] for r in REGIONS['languages']}:return error('Choose a language from the catalog.')
+ if currency not in {r['code'] for r in REGIONS['currencies']}:return error('Choose a currency from the catalog.')
+ with db() as c:
+  c.execute('UPDATE users SET language=?,currency=? WHERE id=?',(language,currency,u['id']))
+  audit(c,u,'preferences_updated',u['id'])
+ return jsonify(language=language,currency=currency)
 @app.post('/api/logout')
 @auth()
 def logout(u):session.clear();return jsonify(ok=True)

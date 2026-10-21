@@ -32,7 +32,7 @@ ansible-playbook -i localhost, -c local ansible/deploy.yml
 sudo -u aims env AIMS_DATA=/var/lib/aims /opt/aims/.venv/bin/python /opt/aims/scripts/admin.py create
 ```
 
-AIMS binds loopback port 18840. HTTPS is required for secure cookies. The playbook preserves existing virtual hosts and issued certificate configuration on rerun. Certbot must succeed before public sign-in works. Service data lives outside the checkout in `/var/lib/aims`. Back up this directory encrypted, including the session key. Test restores and configure retention, privacy contacts and incident handling before accepting real sensitive identity records. Uploaded documents are permission-protected, not encrypted at rest by this application; use host disk encryption and encrypted backups. Malware scanning and third-party verification are not yet connected.
+Production AIMS uses the dedicated Unix socket `/run/aims/aims.sock`; local development uses port 18840. HTTPS is required for secure cookies. The playbook preserves existing virtual hosts and issued certificate configuration on rerun. Certbot must succeed before public sign-in works. Service data lives outside the checkout in `/var/lib/aims`. Back up this directory encrypted, including the session key. Test restores and configure retention, privacy contacts and incident handling before accepting real sensitive identity records. Uploaded documents are permission-protected, not encrypted at rest by this application; use host disk encryption and encrypted backups. Malware scanning and third-party verification are not yet connected.
 
 ## Android and store
 
@@ -47,3 +47,17 @@ The store filesystem and credentials have not been assumed. No automatic catalog
 ## Validation
 
 `python -m unittest discover -s tests -v` checks tenant isolation, role boundaries, CSRF, upload access, and application transitions. `node --check static/app.js` verifies JavaScript syntax. Production hosting, DNS/TLS, Android signing and store publication require their respective live environments.
+
+
+## Languages and currencies
+
+The **Language & currency** navigation is available to guests, users and administrators. New accounts and fresh browsers default to Nigerian Pidgin (`pcm`) and proposed Afira (`AFR`, `Ⱥ`, 100 cents per unit). Signed-in preferences persist per user in the database; guest preferences persist in browser storage. Existing databases receive an additive, idempotent column migration.
+
+`static/regions.json` contains 175 African language/community language choices and 47 currency options, including current African national/shared currencies, selected territory currencies and Afira. This expandable catalog is not an exhaustive census of Africa’s thousands of languages. Pidgin translates core navigation, common actions, fields and messages; English is available. Other language choices explicitly use English fallback until reviewed translations are supplied. Detailed help, some errors and legal content remain English. No external translation service receives identity records.
+
+Afira: **Ah-FEE-rah**, **One Africa. Shared Prosperity.** Proposed platform currency; not an ISO-issued legal tender designation. Preview: `Ⱥ10 · Ⱥ250 · Ⱥ1,000`. Selecting currency does not convert amounts, invent exchange rates or activate payments. Currency metadata reference: ISO 4217 maintenance agency SIX (https://www.six-group.com/en/products-services/financial-information/data-standards.html). Current codes include SLE, MRU, STN and ZWG. `AIMSLocale.formatMoney()` applies catalog precision, including zero-decimal and three-decimal currencies.
+
+
+### Repair an HTTP 401 readiness response on port 18840
+
+A 401 response from a `BaseHTTP` server does not match this Flask/Gunicorn application's unauthenticated `/api/health` endpoint. Another process or an older service may own that port. The deployment now binds AIMS to a dedicated systemd runtime socket, updates only the AIMS Nginx upstream while retaining certificates, and verifies both HTTP 200 and the `AIMS` service identity. It does not stop or kill an unrelated listener on 18840. On failure it prints service status and recent logs. Existing data and administrator credentials are retained.

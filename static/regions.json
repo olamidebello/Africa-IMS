@@ -1,0 +1,1558 @@
+{
+  "default_language": "pcm",
+  "default_currency": "AFR",
+  "languages": [
+    {
+      "code": "pcm",
+      "name": "Nigerian Pidgin (Naijá)",
+      "direction": "ltr",
+      "translation": "available"
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "direction": "ltr",
+      "translation": "available"
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ar",
+      "name": "العربية",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "pt",
+      "name": "Português",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "af",
+      "name": "Afrikaans",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ak",
+      "name": "Akan",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "am",
+      "name": "አማርኛ — Amharic",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ha",
+      "name": "Hausa",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ig",
+      "name": "Igbo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "yo",
+      "name": "Yorùbá",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "sw",
+      "name": "Kiswahili",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "zu",
+      "name": "isiZulu",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "xh",
+      "name": "isiXhosa",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "st",
+      "name": "Sesotho",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "tn",
+      "name": "Setswana",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ss",
+      "name": "siSwati",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nr",
+      "name": "isiNdebele",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nso",
+      "name": "Sepedi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ts",
+      "name": "itsonga",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ve",
+      "name": "Tshivenda",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "sn",
+      "name": "ChiShona",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nd",
+      "name": "isiNdebele (North)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ny",
+      "name": "Chichewa",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "rw",
+      "name": "Kinyarwanda",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "rn",
+      "name": "Kirundi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "lg",
+      "name": "Luganda",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ln",
+      "name": "Lingála",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kg",
+      "name": "Kikongo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "lu",
+      "name": "Tshiluba",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "sg",
+      "name": "Sängö",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "wo",
+      "name": "Wolof",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ff",
+      "name": "Fulfulde / Pulaar",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "bm",
+      "name": "Bamanankan",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "om",
+      "name": "Afaan Oromoo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ti",
+      "name": "ትግርኛ — Tigrinya",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "so",
+      "name": "Soomaali",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "mg",
+      "name": "Malagasy",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "zgh",
+      "name": "ⵜⴰⵎⴰⵣⵉⵖⵜ — Standard Moroccan Tamazight",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kab",
+      "name": "Taqbaylit (Kabyle)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "shi",
+      "name": "Tachelhit",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "rif",
+      "name": "Tarifit",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "taq",
+      "name": "Tamasheq",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "tzm",
+      "name": "Central Atlas Tamazight",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "siw",
+      "name": "Siwi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "copt",
+      "name": "Coptic",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "arz",
+      "name": "Egyptian Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ary",
+      "name": "Moroccan Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "arq",
+      "name": "Algerian Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "aeb",
+      "name": "Tunisian Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ayl",
+      "name": "Libyan Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "apd",
+      "name": "Sudanese Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "shu",
+      "name": "Chadian Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "mey",
+      "name": "Hassaniya Arabic",
+      "direction": "rtl",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "gez",
+      "name": "Geʽez",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "aa",
+      "name": "Qafar (Afar)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "sid",
+      "name": "Sidama",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "wal",
+      "name": "Wolaytta",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "byn",
+      "name": "Bilen",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "tig",
+      "name": "Tigre",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "seh",
+      "name": "Sena",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ndc",
+      "name": "Ndau",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "mgh",
+      "name": "Makhuwa",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "vmw",
+      "name": "Makhuwa (Central)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nyu",
+      "name": "Nyungwe",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "lua",
+      "name": "Luba-Kasai",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "lue",
+      "name": "Luvale",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "lun",
+      "name": "Lunda",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "loz",
+      "name": "Silozi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "bem",
+      "name": "Ichibemba",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "toi",
+      "name": "Chitonga",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kqn",
+      "name": "Kaonde",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "umb",
+      "name": "Umbundu",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kmb",
+      "name": "Kimbundu",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kj",
+      "name": "Kuanyama",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ng",
+      "name": "Oshindonga",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "hz",
+      "name": "Otjiherero",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "naq",
+      "name": "Khoekhoegowab",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kde",
+      "name": "Makonde",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "yao",
+      "name": "Yao",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kcg",
+      "name": "Tyap",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "bin",
+      "name": "Ẹdo (Bini)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "efi",
+      "name": "Efik",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ibb",
+      "name": "Ibibio",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "tiv",
+      "name": "Tiv",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ijc",
+      "name": "Izon",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "urh",
+      "name": "Urhobo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "its",
+      "name": "Itsekiri",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "guw",
+      "name": "Gun",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fon",
+      "name": "Fon",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ee",
+      "name": "Eʋegbe (Ewe)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ga",
+      "name": "Gã",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ada",
+      "name": "Dangme",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "dag",
+      "name": "Dagbani",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "gur",
+      "name": "Farefare",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kus",
+      "name": "Kusaal",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "tw",
+      "name": "Twi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fat",
+      "name": "Fante",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "mos",
+      "name": "Mooré",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "dyu",
+      "name": "Jula",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "snk",
+      "name": "Soninke",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "sus",
+      "name": "Susu",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "men",
+      "name": "Mende",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "tem",
+      "name": "Temne",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kri",
+      "name": "Krio",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kpe",
+      "name": "Kpelle",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "vai",
+      "name": "Vai",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "man",
+      "name": "Mandinka",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "dje",
+      "name": "Zarma",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "khq",
+      "name": "Koyra Chiini",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ses",
+      "name": "Koyraboro Senni",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "bci",
+      "name": "Baoulé",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kpo",
+      "name": "Kposo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "bas",
+      "name": "Basaa",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "dua",
+      "name": "Duala",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ewo",
+      "name": "Ewondo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "bum",
+      "name": "Bulu",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fan",
+      "name": "Fang",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fub",
+      "name": "Adamawa Fulfulde",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fuv",
+      "name": "Nigerian Fulfulde",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nyn",
+      "name": "Runyankore",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "cgg",
+      "name": "Rukiga",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "xog",
+      "name": "Lusoga",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "teo",
+      "name": "Ateso",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ach",
+      "name": "Acholi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "laj",
+      "name": "Lango",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "alz",
+      "name": "Alur",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "lgg",
+      "name": "Lugbara",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "luo",
+      "name": "Dholuo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ki",
+      "name": "Gĩkũyũ",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kam",
+      "name": "Kikamba",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "mer",
+      "name": "Kimeru",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "luy",
+      "name": "Luhya",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "mas",
+      "name": "Maa (Maasai)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kln",
+      "name": "Kalenjin",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "guz",
+      "name": "Ekegusii",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "saq",
+      "name": "Samburu",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "rel",
+      "name": "Rendille",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "suk",
+      "name": "Sukuma",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nym",
+      "name": "Nyamwezi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "lag",
+      "name": "Langi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "jmc",
+      "name": "Machame",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ksb",
+      "name": "Shambala",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "bez",
+      "name": "Bena",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "rof",
+      "name": "Rombo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "dav",
+      "name": "Taita",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "mfe",
+      "name": "Kreol Morisien",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "crs",
+      "name": "Kreol Seselwa",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kea",
+      "name": "Kabuverdianu",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "pov",
+      "name": "Guinea-Bissau Creole",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fpe",
+      "name": "Fernando Po Creole",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fng",
+      "name": "Fanagalo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "wes",
+      "name": "Cameroon Pidgin",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ann",
+      "name": "Obolo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nzi",
+      "name": "Nzema",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "sef",
+      "name": "Cebaara Senufo",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "dga",
+      "name": "Dagaare",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "din",
+      "name": "Dinka",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nus",
+      "name": "Nuer",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "shk",
+      "name": "Shilluk",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "zag",
+      "name": "Zaghawa",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "fia",
+      "name": "Nobiin",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "knc",
+      "name": "Kanuri",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "kr",
+      "name": "Kanuri (group)",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "gu",
+      "name": "ગુજરાતી — Gujarati",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "hi",
+      "name": "हिन्दी — Hindi",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ta",
+      "name": "தமிழ் — Tamil",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "gse",
+      "name": "Ghanaian Sign Language",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "nsi",
+      "name": "Nigerian Sign Language",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "sfs",
+      "name": "South African Sign Language",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "xki",
+      "name": "Kenyan Sign Language",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "ugn",
+      "name": "Ugandan Sign Language",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "tza",
+      "name": "Tanzanian Sign Language",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    },
+    {
+      "code": "eth",
+      "name": "Ethiopian Sign Language",
+      "direction": "ltr",
+      "translation": "english_fallback"
+    }
+  ],
+  "currencies": [
+    {
+      "code": "AFR",
+      "name": "Afira",
+      "symbol": "Ⱥ",
+      "minor_units": 2,
+      "subdivision": "cent",
+      "subunits_per_unit": 100,
+      "pronunciation": "Ah-FEE-rah",
+      "slogan": "One Africa. Shared Prosperity.",
+      "description": "The name combines Africa with a new era, representing shared prosperity across the continent. The symbol’s strong A shape connects it to Africa.",
+      "proposed": true,
+      "countries": []
+    },
+    {
+      "code": "DZD",
+      "name": "Algerian dinar",
+      "symbol": "DA",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Algeria"
+      ]
+    },
+    {
+      "code": "AOA",
+      "name": "Angolan kwanza",
+      "symbol": "Kz",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Angola"
+      ]
+    },
+    {
+      "code": "BWP",
+      "name": "Botswana pula",
+      "symbol": "P",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Botswana"
+      ]
+    },
+    {
+      "code": "BIF",
+      "name": "Burundian franc",
+      "symbol": "FBu",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Burundi"
+      ]
+    },
+    {
+      "code": "CVE",
+      "name": "Cabo Verde escudo",
+      "symbol": "Esc",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Cabo Verde"
+      ]
+    },
+    {
+      "code": "XAF",
+      "name": "Central African CFA franc",
+      "symbol": "FCFA",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Cameroon",
+        "Central African Republic",
+        "Chad",
+        "Republic of the Congo",
+        "Equatorial Guinea",
+        "Gabon"
+      ]
+    },
+    {
+      "code": "KMF",
+      "name": "Comorian franc",
+      "symbol": "CF",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Comoros"
+      ]
+    },
+    {
+      "code": "CDF",
+      "name": "Congolese franc",
+      "symbol": "FC",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Democratic Republic of the Congo"
+      ]
+    },
+    {
+      "code": "DJF",
+      "name": "Djiboutian franc",
+      "symbol": "Fdj",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Djibouti"
+      ]
+    },
+    {
+      "code": "EGP",
+      "name": "Egyptian pound",
+      "symbol": "E£",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Egypt"
+      ]
+    },
+    {
+      "code": "ERN",
+      "name": "Eritrean nakfa",
+      "symbol": "Nfk",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Eritrea"
+      ]
+    },
+    {
+      "code": "SZL",
+      "name": "Eswatini lilangeni",
+      "symbol": "E",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Eswatini"
+      ]
+    },
+    {
+      "code": "ETB",
+      "name": "Ethiopian birr",
+      "symbol": "Br",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Ethiopia"
+      ]
+    },
+    {
+      "code": "GMD",
+      "name": "Gambian dalasi",
+      "symbol": "D",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Gambia"
+      ]
+    },
+    {
+      "code": "GHS",
+      "name": "Ghanaian cedi",
+      "symbol": "₵",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Ghana"
+      ]
+    },
+    {
+      "code": "GNF",
+      "name": "Guinean franc",
+      "symbol": "FG",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Guinea"
+      ]
+    },
+    {
+      "code": "KES",
+      "name": "Kenyan shilling",
+      "symbol": "KSh",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Kenya"
+      ]
+    },
+    {
+      "code": "LSL",
+      "name": "Lesotho loti",
+      "symbol": "L",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Lesotho"
+      ]
+    },
+    {
+      "code": "LRD",
+      "name": "Liberian dollar",
+      "symbol": "L$",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Liberia"
+      ]
+    },
+    {
+      "code": "LYD",
+      "name": "Libyan dinar",
+      "symbol": "LD",
+      "minor_units": 3,
+      "proposed": false,
+      "countries": [
+        "Libya"
+      ]
+    },
+    {
+      "code": "MGA",
+      "name": "Malagasy ariary",
+      "symbol": "Ar",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Madagascar"
+      ]
+    },
+    {
+      "code": "MWK",
+      "name": "Malawian kwacha",
+      "symbol": "MK",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Malawi"
+      ]
+    },
+    {
+      "code": "MRU",
+      "name": "Mauritanian ouguiya",
+      "symbol": "UM",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Mauritania"
+      ]
+    },
+    {
+      "code": "MUR",
+      "name": "Mauritian rupee",
+      "symbol": "₨",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Mauritius"
+      ]
+    },
+    {
+      "code": "MAD",
+      "name": "Moroccan dirham",
+      "symbol": "DH",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Morocco",
+        "Western Sahara"
+      ]
+    },
+    {
+      "code": "MZN",
+      "name": "Mozambican metical",
+      "symbol": "MT",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Mozambique"
+      ]
+    },
+    {
+      "code": "NAD",
+      "name": "Namibian dollar",
+      "symbol": "N$",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Namibia"
+      ]
+    },
+    {
+      "code": "NGN",
+      "name": "Nigerian naira",
+      "symbol": "₦",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Nigeria"
+      ]
+    },
+    {
+      "code": "RWF",
+      "name": "Rwandan franc",
+      "symbol": "RF",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Rwanda"
+      ]
+    },
+    {
+      "code": "STN",
+      "name": "São Tomé and Príncipe dobra",
+      "symbol": "Db",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "São Tomé and Príncipe"
+      ]
+    },
+    {
+      "code": "SCR",
+      "name": "Seychellois rupee",
+      "symbol": "₨",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Seychelles"
+      ]
+    },
+    {
+      "code": "SLE",
+      "name": "Sierra Leonean leone",
+      "symbol": "Le",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Sierra Leone"
+      ]
+    },
+    {
+      "code": "SOS",
+      "name": "Somali shilling",
+      "symbol": "Sh",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Somalia"
+      ]
+    },
+    {
+      "code": "ZAR",
+      "name": "South African rand",
+      "symbol": "R",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "South Africa",
+        "Lesotho",
+        "Namibia",
+        "Eswatini"
+      ]
+    },
+    {
+      "code": "SSP",
+      "name": "South Sudanese pound",
+      "symbol": "SS£",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "South Sudan"
+      ]
+    },
+    {
+      "code": "SDG",
+      "name": "Sudanese pound",
+      "symbol": "SD£",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Sudan"
+      ]
+    },
+    {
+      "code": "TZS",
+      "name": "Tanzanian shilling",
+      "symbol": "TSh",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Tanzania"
+      ]
+    },
+    {
+      "code": "TND",
+      "name": "Tunisian dinar",
+      "symbol": "DT",
+      "minor_units": 3,
+      "proposed": false,
+      "countries": [
+        "Tunisia"
+      ]
+    },
+    {
+      "code": "UGX",
+      "name": "Ugandan shilling",
+      "symbol": "USh",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Uganda"
+      ]
+    },
+    {
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "CFA",
+      "minor_units": 0,
+      "proposed": false,
+      "countries": [
+        "Benin",
+        "Burkina Faso",
+        "Côte d’Ivoire",
+        "Guinea-Bissau",
+        "Mali",
+        "Niger",
+        "Senegal",
+        "Togo"
+      ]
+    },
+    {
+      "code": "ZMW",
+      "name": "Zambian kwacha",
+      "symbol": "ZK",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Zambia"
+      ]
+    },
+    {
+      "code": "ZWG",
+      "name": "Zimbabwe Gold",
+      "symbol": "ZiG",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Zimbabwe"
+      ]
+    },
+    {
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "US$",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Zimbabwe",
+        "Liberia"
+      ]
+    },
+    {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Mayotte",
+        "Réunion",
+        "Canary Islands",
+        "Ceuta",
+        "Melilla"
+      ]
+    },
+    {
+      "code": "SHP",
+      "name": "Saint Helena pound",
+      "symbol": "£",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Saint Helena",
+        "Ascension",
+        "Tristan da Cunha"
+      ]
+    },
+    {
+      "code": "GBP",
+      "name": "Pound sterling",
+      "symbol": "£",
+      "minor_units": 2,
+      "proposed": false,
+      "countries": [
+        "Saint Helena",
+        "Ascension",
+        "Tristan da Cunha"
+      ]
+    }
+  ],
+  "scope": "Expandable catalog of African languages and current national/shared currencies, with selected territory currencies. Language selection does not imply a complete translation.",
+  "currency_source": "https://www.six-group.com/en/products-services/financial-information/data-standards.html"
+}

@@ -46,4 +46,28 @@ class PlatformTests(unittest.TestCase):
   self.assertEqual(self.client.get('/').status_code,200)
   with self.client.get('/static/logo.png') as r:self.assertEqual(r.status_code,200)
   self.assertEqual(self.client.get('/api/health').json['status'],'ok')
+ def test_anonymous_health(self):
+  anonymous=app.test_client()
+  response=anonymous.get('/api/health')
+  self.assertEqual(response.status_code,200)
+  self.assertEqual(response.json,{'status':'ok','name':'AIMS'})
+  self.assertEqual(anonymous.get('/api/me').status_code,401)
+ def test_regional_defaults(self):
+  self.assertEqual(self.client.get('/api/preferences').json,{'language':'pcm','currency':'AFR'})
+  self.assertEqual(self.client.get('/api/me').json['currency'],'AFR')
+ def test_regional_preferences_persist_and_are_personal(self):
+  self.assertEqual(self.patch('preferences',{'language':'yo','currency':'NGN'}).status_code,200)
+  self.login(1);self.assertEqual(self.client.get('/api/preferences').json,{'language':'yo','currency':'NGN'})
+  self.login(3);self.assertEqual(self.client.get('/api/preferences').json,{'language':'pcm','currency':'AFR'})
+ def test_invalid_preferences_do_not_mutate(self):
+  self.assertEqual(self.patch('preferences',{'language':'invalid','currency':'AFR'}).status_code,400)
+  self.assertEqual(self.patch('preferences',{'language':'en','currency':'FAKE'}).status_code,400)
+  self.assertEqual(self.client.get('/api/preferences').json,{'language':'pcm','currency':'AFR'})
+ def test_currency_catalog(self):
+  from app import REGIONS
+  codes={c['code'] for c in REGIONS['currencies']}
+  self.assertTrue({'AFR','NGN','XOF','XAF','ZWG','SLE','MRU','STN','ZAR','SHP','EUR'}<=codes)
+  self.assertFalse({'ZWL','SLL','MRO','STD'} & codes)
+  afira=next(c for c in REGIONS['currencies'] if c['code']=='AFR')
+  self.assertEqual(afira['symbol'],'Ⱥ');self.assertEqual(afira['subunits_per_unit'],100);self.assertTrue(afira['proposed'])
 if __name__=='__main__':unittest.main()
