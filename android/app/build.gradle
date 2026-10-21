@@ -1,0 +1,17 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'world.africandroid.aims'
+ compileSdk 35
+ defaultConfig { applicationId 'world.africandroid.aims'; minSdk 26; targetSdk 35; versionCode 1; versionName '1.0.0' }
+ signingConfigs {
+  release {
+   if (System.getenv('AIMS_KEYSTORE')) {
+    storeFile file(System.getenv('AIMS_KEYSTORE'))
+    storePassword System.getenv('AIMS_STORE_PASSWORD')
+    keyAlias System.getenv('AIMS_KEY_ALIAS')
+    keyPassword System.getenv('AIMS_KEY_PASSWORD')
+   }
+  }
+ }
+ buildTypes { release { signingConfig signingConfigs.release } }
+}

@@ -1,0 +1,9 @@
+var/
+.venv/
+__pycache__/
+*.pyc
+*.jks
+*.keystore
+android/.gradle/
+android/**/build/
+static/downloads/*.apk

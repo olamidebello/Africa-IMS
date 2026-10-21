@@ -1,0 +1,133 @@
+---
+- name: Deploy AIMS on Olamidepanel without replacing Africa Jobs
+  hosts: all
+  become: true
+  vars:
+    aims_domain: identity.africandroid.world
+    aims_repo: https://github.com/olamidebello/Africa-IMS.git
+    aims_version: main
+    aims_root: /opt/aims
+    aims_port: 18840
+    aims_tls_email: dobcalldemo@gmail.com
+    aims_enable_tls: true
+  tasks:
+    - name: Protect existing Africa Jobs domain
+      ansible.builtin.assert:
+        that:
+          - aims_domain == 'identity.africandroid.world'
+          - aims_port | int == 18840
+        fail_msg: AIMS must not replace the Africa Jobs host or port.
+    - name: Install packages
+      ansible.builtin.apt:
+        name: [git, python3-venv, nginx, certbot, python3-certbot-nginx]
+        update_cache: true
+    - name: Create service account
+      ansible.builtin.user:
+        name: aims
+        system: true
+        shell: /usr/sbin/nologin
+        home: /var/lib/aims
+    - name: Pull application source
+      ansible.builtin.git:
+        repo: '{{ aims_repo }}'
+        dest: '{{ aims_root }}'
+        version: '{{ aims_version }}'
+        force: false
+      notify: Restart AIMS
+    - name: Install Python dependencies
+      ansible.builtin.pip:
+        requirements: '{{ aims_root }}/requirements.txt'
+        virtualenv: '{{ aims_root }}/.venv'
+        virtualenv_command: python3 -m venv
+      notify: Restart AIMS
+    - name: Create protected storage
+      ansible.builtin.file:
+        path: /var/lib/aims
+        state: directory
+        owner: aims
+        group: aims
+        mode: '0700'
+    - name: Install service
+      ansible.builtin.copy:
+        dest: /etc/systemd/system/aims.service
+        mode: '0644'
+        content: |
+          [Unit]
+          Description=AIMS identity platform
+          After=network.target
+          [Service]
+          User=aims
+          Group=aims
+          WorkingDirectory={{ aims_root }}
+          Environment=AIMS_DATA=/var/lib/aims
+          Environment=AIMS_SECURE=1
+          ExecStart={{ aims_root }}/.venv/bin/gunicorn --workers 1 --threads 4 --bind 127.0.0.1:{{ aims_port }} app:app
+          Restart=on-failure
+          UMask=0077
+          NoNewPrivileges=true
+          PrivateTmp=true
+          ProtectSystem=strict
+          ReadWritePaths=/var/lib/aims
+          [Install]
+          WantedBy=multi-user.target
+      notify: Restart AIMS
+    - name: Configure only AIMS virtual host
+      ansible.builtin.copy:
+        dest: /etc/nginx/sites-available/aims
+        force: false
+        mode: '0644'
+        content: |
+          server {
+            listen 80;
+            server_name {{ aims_domain }};
+            client_max_body_size 10m;
+            location / {
+              proxy_pass http://127.0.0.1:{{ aims_port }};
+              proxy_set_header Host $host;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+          }
+    - name: Enable virtual host
+      ansible.builtin.file:
+        src: /etc/nginx/sites-available/aims
+        dest: /etc/nginx/sites-enabled/aims
+        state: link
+    - name: Validate Nginx configuration
+      ansible.builtin.command: nginx -t
+      changed_when: false
+    - name: Start application
+      ansible.builtin.systemd:
+        name: aims
+        enabled: true
+        state: started
+        daemon_reload: true
+    - name: Apply source changes
+      ansible.builtin.meta: flush_handlers
+    - name: Reload Nginx
+      ansible.builtin.systemd:
+        name: nginx
+        state: reloaded
+    - name: Issue certificate after DNS points here
+      ansible.builtin.command:
+        argv: [certbot, --nginx, -d, '{{ aims_domain }}', --non-interactive, --agree-tos, --redirect, --email, '{{ aims_tls_email }}', --keep-until-expiring]
+      when: aims_enable_tls | bool
+      register: cert
+      changed_when: "'Congratulations' in cert.stdout"
+    - name: Check application database readiness
+      ansible.builtin.uri:
+        url: 'http://127.0.0.1:{{ aims_port }}/api/health'
+        status_code: 200
+      register: readiness
+      retries: 10
+      delay: 2
+      until: readiness.status == 200
+    - name: Show account bootstrap command
+      ansible.builtin.debug:
+        msg: 'Create admin: sudo -u aims env AIMS_DATA=/var/lib/aims {{ aims_root }}/.venv/bin/python {{ aims_root }}/scripts/admin.py create'
+  handlers:
+    - name: Restart AIMS
+      ansible.builtin.systemd:
+        name: aims
+        state: restarted
+        daemon_reload: true
