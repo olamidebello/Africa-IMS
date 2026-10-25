@@ -103,11 +103,11 @@
     - name: Validate Nginx configuration
       ansible.builtin.command: nginx -t
       changed_when: false
-    - name: Start application
+    - name: Restart AIMS to load deployed source even when an outer playbook already pulled it
       ansible.builtin.systemd:
         name: aims
         enabled: true
-        state: started
+        state: restarted
         daemon_reload: true
     - name: Apply source changes
       ansible.builtin.meta: flush_handlers
@@ -133,6 +133,22 @@
           retries: 10
           delay: 2
           until: readiness.status == 200 and readiness.json.name | default('') == 'AIMS' and readiness.json.status | default('') == 'ok'
+        - name: Verify installed mobile page in the running AIMS process
+          ansible.builtin.uri:
+            url: http://localhost/install
+            unix_socket: /run/aims/aims.sock
+            return_content: true
+            status_code: 200
+          register: mobile_page
+          retries: 5
+          delay: 2
+          until: mobile_page.status == 200 and 'AIMS for Android' in mobile_page.content
+        - name: Verify installed APK in the running AIMS process
+          ansible.builtin.uri:
+            url: http://localhost/download
+            unix_socket: /run/aims/aims.sock
+            method: HEAD
+            status_code: 200
       rescue:
         - name: Collect service diagnostics
           ansible.builtin.command: systemctl status aims --no-pager --full
