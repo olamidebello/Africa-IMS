@@ -61,3 +61,11 @@ Afira: **Ah-FEE-rah**, **One Africa. Shared Prosperity.** Proposed platform curr
 ### Repair an HTTP 401 readiness response on port 18840
 
 A 401 response from a `BaseHTTP` server does not match this Flask/Gunicorn application's unauthenticated `/api/health` endpoint. Another process or an older service may own that port. The deployment now binds AIMS to a dedicated systemd runtime socket, updates only the AIMS Nginx upstream while retaining certificates, and verifies both HTTP 200 and the `AIMS` service identity. It does not stop or kill an unrelated listener on 18840. On failure it prints service status and recent logs. Existing data and administrator credentials are retained.
+
+## Signed Android 1.0.1 and install page
+
+`static/downloads/AIMS.apk` is the signed, verified Android website client (package `world.africandroid.aims`, version code 2, Android 8+). Signature and checksum metadata are in `static/downloads/release.json`. The private signing key is preserved separately and must never be committed. Reuse that key for compatible updates; if you installed a differently signed earlier launcher, uninstall it before installing this release.
+
+`/install` provides Android installation steps, `/download` serves the APK, and the site has a visible install banner. The app includes same-domain HTTPS navigation, Home/Reload/Back, document picking and external links; no offline identity, native biometrics or push. Runtime testing on a physical Android device remains outstanding.
+
+Rebuild without Gradle using `ANDROID_HOME`, `AIMS_KEYSTORE`, `AIMS_KEY_PASSWORD`, optional `AIMS_KEY_ALIAS` (default `aims`), and `AIMS_ECJ_JAR` when javac is unavailable: `bash android/tools/build.sh`. Preserve the APK signing key and increment both manifest and Gradle version codes before future builds. Deploy the source with `ansible/deploy.yml` to expose the install page and APK.

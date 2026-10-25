@@ -1,0 +1,22 @@
+{
+  "name": "AIMS \u2014 Africa Identity Management System",
+  "version": "1.0.1",
+  "version_code": 2,
+  "package": "world.africandroid.aims",
+  "minimum_android": "8.0",
+  "website": "https://identity.africandroid.world/",
+  "install_url": "https://identity.africandroid.world/install",
+  "apk_url": "https://africanappsstore.space/downloads/aims.apk",
+  "sha256": "36fdcc4f391cbf5fad1167f964fbb7a46f9a15162310a3fdc8e5be63ee55617c",
+  "signer_sha256": "e5352740d62d3567bd134b5a057d8f5e886ed1b0b9fea3ba9725a0de3bd2d31f",
+  "size": 119246,
+  "artifact_kind": "android-website-client",
+  "features": [
+    "AIMS branded Android app",
+    "HTTPS-only AIMS navigation",
+    "Home, Reload and Back controls",
+    "PDF and image document picker",
+    "External browser for download and third-party links"
+  ],
+  "limitations": "Internet and working AIMS website required. No offline identity records, native biometrics or push notifications. Browser downloads may require a separate browser sign-in."
+}

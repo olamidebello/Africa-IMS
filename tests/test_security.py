@@ -46,6 +46,13 @@ class PlatformTests(unittest.TestCase):
   self.assertEqual(self.client.get('/').status_code,200)
   with self.client.get('/static/logo.png') as r:self.assertEqual(r.status_code,200)
   self.assertEqual(self.client.get('/api/health').json['status'],'ok')
+ def test_android_install_page(self):
+  anonymous=app.test_client()
+  self.assertEqual(anonymous.get('/install').status_code,200)
+  with anonymous.get('/download') as r:
+   self.assertEqual(r.status_code,200)
+   self.assertTrue(r.data.startswith(b'PK'))
+   self.assertIn('AIMS.apk',r.headers['Content-Disposition'])
  def test_anonymous_health(self):
   anonymous=app.test_client()
   response=anonymous.get('/api/health')

@@ -284,6 +284,8 @@ def switch(u):
 @auth(['tenant_admin','super_admin'])
 def audits(u):
  with db() as c:return jsonify([dict(r) for r in c.execute('SELECT * FROM audit WHERE tenant=? ORDER BY id DESC LIMIT 500',(u['tenant'],))])
+@app.get('/install')
+def install_page():return render_template('install.html')
 @app.get('/download')
 def apk():
  p=ROOT/'static/downloads/AIMS.apk'

@@ -7,3 +7,6 @@ __pycache__/
 android/.gradle/
 android/**/build/
 static/downloads/*.apk
+private-signing/
+android/build/
+android/dist/
